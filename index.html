@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Todo App</title>
+</head>
+<body class="relative">
+    <div class="w-[90%] min-w-[350px] h-[95vh] mx-auto mt-[25px] flex flex-col gap-2 overflow-hidden">
+        <h1 class="text-center font-bold text-[40px]">Todo App</h1>
+
+
+        <div >
+            <form id="todo-content">
+                <div class="flex justify-between items-center px-[20px] py-[10px] bg-green-400 gap-4 rounded-[10px]">
+                    <input id="todo-input" class=" flex-1 py-[10px] rounded-[8px] pl-[20px] text-[16px] border-[2px] " placeholder="Enter the title" type="text">
+                    <button id="button" class="bg-green-600 py-[10px] px-[25px] rounded-[12px] hover:bg-green-800 active:scale-95 ease-in-out duration-500 font-bold text-[16px] text-white" type="submit" >Add</button>
+                </div>
+            </form>
+        </div>
+
+
+        <div class="w-[100%] h-[calc(95vh-150px)] bg-slate-200 rounded-xl overflow-y-scroll">
+            <div id="todos-container" class="p-[15px] flex flex-col gap-[10px] ">
+                <!-- !TODO DATE -->
+            </div>
+            
+            
+        </div>
+        
+    </div>
+    <div id="edit-todo" class="w-[100vw] bg-black h-[100vh]  top-0 left-0 right-0 bottom-0 backdrop-blur-sm bg-opacity-50 justify-center hidden items-center fixed ">
+        <div class=" w-[450px] h-[200px] bg-white rounded-md ">
+
+                 <h1 class="text-[24px] text-center font-semibold">Edit</h1>
+            <form id="form-todo-update" class="flex flex-col  gap-[15px] p-[15px] w-[100%] justify-between " >
+
+                <div>
+                    <div class="flex-1 w-[100%]">
+                        <input id="input-todo" class="  py-[10px] rounded-[8px] pl-[20px] text-[16px] border-[1px] border-solid border-black w-[100%] mt-4" placeholder="Enter the title" type="text">
+                    </div>
+                    <div  class="justify-end flex items-end  gap-2">
+    
+                        <button id="cnl"  class="bg-red-600 py-[10px] px-[20px] rounded-[12px] mt-[35px] hover:bg-red-800 active:scale-95 ease-in-out duration-500 font-bold text-[16px] text-white"  >Canel</button>
+    
+                        <button id="edt" class="bg-green-600 py-[10px] px-[25px] rounded-[12px] mt-[35px] hover:bg-green-800 active:scale-95 ease-in-out duration-500 font-bold text-[16px] text-white" type="submit">Edit</button>
+    
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+<div class="absolute bottom-[-5px] flex justify-center gap-1 text-[14px] font-bold"><h1>Owener:</h1><a href="https://t.me/samancik_me">Samancik.me</a> </div>
+
+
+    <script src="./js/app.js"></script>
+</body>
+</html>
