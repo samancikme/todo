@@ -146,27 +146,26 @@ function renderTodos(array){
             <div class="flex justify-between sm:py-[10px] sm:px-[20px] p-[5px] bg-teal-300 rounded-xl gap-[20px] items-center w-[100%]">
                 <div class="flex flex-row items-center md:gap-6 gap-[10px]">
     
-                    <div class="sm:w-[40px] sm:h-[40px] w-[20px] h-[20px] border-[2px] border-black items-center justify-center flex rounded-lg">
-                        <span class="sm:text-[28px] text-[14px] font-bold">${index +1}</span>
+                    <div class="sm:w-[30px] sm:h-[30px] w-[15px] h-[15px] border-[2px]  border-black items-center justify-center flex rounded-lg">
+                        <span class="sm:text-[24px] text-[10px] font-bold">${index +1}</span>
                     </div>
     
-                    <div class="flex flex-col bg-slate-700 w-[160px] md:w-[100%]">
-                        <span class="sm:text-[30px] text-[24px] font-bold min-w-[150px] md:w-[100%] overflow-clip  ${todo.complate && "line-through opacity-50"}">${todo.title}</span>
+
                     <div class="flex flex-col ">
-                        <span class="sm:text-[32px] max-w-[250px] text-[24px] font-bold ${todo.complate && "line-through opacity-50"}">${todo.title}</span>
-                        <span>${todo.date}</span>
+                        <span class="sm:text-[32px] max-w-[250px] md:text-[24px] text-[14px] font-bold ${todo.complate && "line-through opacity-50"}"><a href="#">${todo.title}</a></span>
+                        <span class="md:text-[20px] text-[10px]">${todo.date}</span>
                     </div>
     
                 </div>
     
                 <div class="flex flex-row md:gap-2 gap-1 text-end ease-in-out duration-300 ">
-                    <button onclick="complt(${todo.id})" id="complated" class="sm:text-[50px] text-[40px] hover:text-yellow-50 ease-in-out duration-300 active:scale-90">${todo.complate ? "<i class='bx bx-checkbox-checked'></i>" : "<i class='bx bx-checkbox'></i>"}</button>
+                    <button onclick="complt(${todo.id})" id="complated" class="sm:text-[50px] text-[25px]  hover:text-yellow-50 ease-in-out duration-300 active:scale-90">${todo.complate ? "<i class='bx bx-checkbox-checked'></i>" : "<i class='bx bx-checkbox'></i>"}</button>
 
 
-                    <button onclick="showModal(${todo.id})" id="etid" class="sm:text-[40px] text-[30px] hover:text-green-800 ease-in-out duration-300 active:scale-90"><i class='bx bxs-edit'></i></button>
+                    <button onclick="showModal(${todo.id})" id="etid" class="sm:text-[40px] md:text-[40px] text-[18px] hover:text-green-800 ease-in-out duration-300 active:scale-90"><i class='bx bxs-edit'></i></button>
 
 
-                    <button onclick="deleteTodo(${todo.id})" id="delete" class="sm:text-[40px] text-[30px] hover:text-red-500 ease-in-out duration-300 active:scale-90 "><i class='bx bxs-trash-alt'></i></button>
+                    <button onclick="deleteTodo(${todo.id})" id="delete" class="sm:text-[40px] md:text-[40px] text-[18px] hover:text-red-500 ease-in-out duration-300 active:scale-90 "><i class='bx bxs-trash-alt'></i></button>
                 </div>
                 
             </div>
@@ -191,7 +190,7 @@ renderTodos(JSON.parse(localStorage.getItem("todos")))
 todoContent.addEventListener("submit" , (e) => {  
     e.preventDefault()
     const inpCont = e.target["todo-input"].value.trim()
-    if (inpCont.length > 0){
+    if (inpCont.length < 25 && inpCont.length >0){
         e.target["todo-input"].style.borderColor  = "green"
         const newTodo = {
             id : Date.now(),
@@ -203,7 +202,8 @@ todoContent.addEventListener("submit" , (e) => {
         localStorage.setItem("todos" , JSON.stringify(todos))
         todoContent.reset()
         renderTodos(todos)
-    }else{
+    }
+    else{
         e.target["todo-input"].style.borderColor  = "red"
         e.target["todo-input"].focus()
     }
