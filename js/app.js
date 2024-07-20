@@ -151,7 +151,7 @@ function renderTodos(array){
                     </div>
     
                     <div class="flex flex-col ">
-                        <span class="sm:text-[32px] text-[24px] font-bold ${todo.complate && "line-through opacity-50"}">${todo.title}</span>
+                        <span class="sm:text-[32px] max-w-[250px] text-[24px] font-bold ${todo.complate && "line-through opacity-50"}">${todo.title}</span>
                         <span>${todo.date}</span>
                     </div>
     
