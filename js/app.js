@@ -144,20 +144,20 @@ function renderTodos(array){
         todos.map((todo , index) => {
             TodosContainer.innerHTML +=`
             <div class="flex justify-between sm:py-[10px] sm:px-[20px] p-[5px] bg-teal-300 rounded-xl gap-[20px] items-center w-[100%]">
-                <div class="flex flex-row items-center gap-6">
+                <div class="flex flex-row items-center md:gap-6 gap-[10px]">
     
-                    <div class="sm:w-[40px] sm:h-[40px] w-[30px] h-[30px] border-[2px] border-black items-center justify-center flex rounded-lg">
-                        <span class="sm:text-[28px] text-[18px] font-bold">${index +1}</span>
+                    <div class="sm:w-[40px] sm:h-[40px] w-[20px] h-[20px] border-[2px] border-black items-center justify-center flex rounded-lg">
+                        <span class="sm:text-[28px] text-[14px] font-bold">${index +1}</span>
                     </div>
     
-                    <div class="flex flex-col ">
-                        <span class="sm:text-[32px] text-[24px] font-bold ${todo.complate && "line-through opacity-50"}">${todo.title}</span>
+                    <div class="flex flex-col bg-slate-700 w-[160px] md:w-[100%]">
+                        <span class="sm:text-[30px] text-[24px] font-bold min-w-[150px] md:w-[100%] overflow-clip  ${todo.complate && "line-through opacity-50"}">${todo.title}</span>
                         <span>${todo.date}</span>
                     </div>
     
                 </div>
     
-                <div class="flex flex-row gap-2 text-end ease-in-out duration-300">
+                <div class="flex flex-row md:gap-2 gap-1 text-end ease-in-out duration-300 ">
                     <button onclick="complt(${todo.id})" id="complated" class="sm:text-[50px] text-[40px] hover:text-yellow-50 ease-in-out duration-300 active:scale-90">${todo.complate ? "<i class='bx bx-checkbox-checked'></i>" : "<i class='bx bx-checkbox'></i>"}</button>
 
 
